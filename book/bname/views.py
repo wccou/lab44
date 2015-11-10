@@ -5,7 +5,7 @@ from writer.models import Author
 from django.shortcuts import render_to_response
 from django.shortcuts import HttpResponse
 
-# Create your views here.
+
 def index(request):
 	bname_list = Book.objects.all()
 	return render_to_response('index.html',{'bname_list':bname_list})
@@ -109,4 +109,6 @@ def showauthor(request):
 def showbook(request):
 	book_list = Book.objects.all()
 	return render_to_response('showbook.html',{'book_list':book_list})
-	
+
+def test(request)
+	return  HttpResponse('没有该作者！')
