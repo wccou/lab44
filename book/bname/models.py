@@ -3,6 +3,7 @@ from django.contrib import admin
 class Book(models.Model):
 	ISBN = models.CharField(max_length = 150)
 	test =  models.CharField(max_length = 150)
+	B2 =  models.CharField(max_length = 150)
 	Title = models.CharField(max_length = 150)
 	AuthorID = models.CharField(max_length = 150)
 	Publisher = models.CharField(max_length = 150)
