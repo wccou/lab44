@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>书籍详情</title>
+<style>
+table,th,td
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
+}
+</style>
+</head>
+<body>
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="http://pic.pptbz.com/pptpic/201307/2013070221393564.jpg" height="100%" width="100%"/> 
+</div> 
+<center>
+<br><br><br><br><br><br><br><br><br><br>
+<a href="/">点此返回首页</a>
+<table>
+<tr>
+<th>书名（点击查看详情）</th>
+<th>ISBN</th>
+<th>作者ID（点击查看详情）</th>
+<th>出版社</th>
+<th>出版日期</th>
+<th>价格</th>
+
+{% for book in book_list %}
+	<tr>
+	<td><a href="/book/{{book.ISBN}}/">{{book.Title}}</a></td>
+	<td>{{book.ISBN}}</td>
+	<td><a href="/Author/{{book.AuthorID}}/">{{book.AuthorID}}</td>
+	<td>{{ book.Publisher }}</td>
+	<td>{{ book.PublishDate }}</td>
+	<td>{{ book.Price}}</td>
+	</tr>
+	
+	{% endfor%}
+</table>
+</center>
+</body>
+</html>

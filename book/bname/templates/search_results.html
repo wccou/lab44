@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<title>搜索结果</title>
+<style>
+table,th,td
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
+}
+</style>
+</head>
+
+<body>
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="http://pic.pptbz.com/pptpic/201307/2013070221393564.jpg" height="100%" width="100%"/> 
+</div> 
+<center>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="/">点此返回首页</a>
+<p>你搜索的是 : <strong>{{ query }}</strong></p>
+{% if books %}
+	<p>该作者著有 {{ books|length }} 本书.</p>
+<table>
+<tr>
+<th>ISBN</th>
+<th>书名</th>
+</tr>
+
+
+	<ul>
+		{% for book in books %}
+		<tr>
+		<td>{{book.ISBN}}</td>
+		<td><a href="/book/{{book.ISBN}}/">{{book.Title}}</a></td>
+		</tr>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>暂时未收录作者“<strong>{{query}}</strong>”的书籍！</p>
+{% endif %}
+
+</table>
+</center>
+</body>
+</html>

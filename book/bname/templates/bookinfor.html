@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>书籍信息</title>
+<style>
+table,th,td
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
+}
+</style>
+</head>
+<body>
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="http://pic.pptbz.com/pptpic/201307/2013070221393564.jpg" height="100%" width="100%"/> 
+</div> 
+<br><br><br><br><br><br><br><br><br><br>
+<center>
+<a href="/">点此返回首页</a>
+<table>
+<tr>
+<th>ISBN</th>
+<th>作者ID</th>
+<th>出版社</th>
+<th>出版日期</th>
+<th>价格</th>
+</tr>
+<tr>
+<td>{{book.ISBN}}</td>
+<td><a href="/Author/{{book.AuthorID}}/">{{book.AuthorID}}</a></td>
+<td>{{book.Publisher}}</td>
+<td>{{book.PublishDate}}</td>
+<td>{{book.Price}}</td>
+</tr>
+
+
+</table>
+<a href="/delete/{{book.ISBN}}/"><button type="button">删除</button></a>
+
+<a href="/change/{{book.ISBN}}/"><button type="button">修改</button></a>
+</center>
+</body>
+</html>

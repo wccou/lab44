@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>添加书籍</title>
+</head>
+<body>
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="http://pic.pptbz.com/pptpic/201307/2013070221393564.jpg" height="100%" width="100%"/> 
+</div> 
+<center>
+<br><br><br><br><br><br><br><br><br><br>
+<a href="/">点此返回首页</a>
+<form action="/update/{{book.ISBN}}/" method="get">
+  书籍ISBN: <input type="text" name="I" value={{book.ISBN}} />
+  <br>
+  书籍名称: <input type="text" name="T" value={{book.Title}} />
+  <br>
+  作者ID: &nbsp;&nbsp;<input type="text" name="ID" value={{book.AuthorID}} />
+  <br>
+  出版社: &nbsp;&nbsp;<input type="text" name="Per" value={{book.Publisher}} />
+  <br>
+  出版日期: <input type="text" name="PD" value={{book.PublishDate}} />
+  <br>
+  书籍价格: <input type="text" name="Price" value={{book.Price}} />
+  <br>
+  <a href="/update/{{book.ISBN}}/"><input type="submit" value="确认" /></a>
+</form>
+</center>
+</body>
+</html>
